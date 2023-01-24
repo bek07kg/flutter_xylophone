@@ -2,14 +2,14 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'components/song_button.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePage createState() => _HomePage();
 }
 
 class _HomePage extends State<HomePage> {
-  AudioCache song = AudioCache();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,85 +17,21 @@ class _HomePage extends State<HomePage> {
         backgroundColor: Colors.black,
         elevation: 0,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Тапшырма-06",
           style: TextStyle(color: Colors.white),
         ),
       ),
       body: Center(
         child: Column(
-          children: [
-            Expanded(
-              child: InkWell(
-                splashColor: Colors.grey,
-                onTap: () {
-                  song.play("notes/note1.wav");
-                },
-                child: Container(
-                  color: Colors.red,
-                ),
-              ),
-            ),
-            Expanded(
-              child: InkWell(
-                onTap: () {
-                  song.play("notes/note2.wav");
-                },
-                child: Container(
-                  color: Colors.orange,
-                ),
-              ),
-            ),
-            Expanded(
-              child: InkWell(
-                onTap: () {
-                  song.play("notes/note3.wav");
-                },
-                child: Container(
-                  color: Colors.yellow,
-                ),
-              ),
-            ),
-            Expanded(
-              child: InkWell(
-                onTap: () {
-                  song.play("notes/note4.wav");
-                },
-                child: Container(
-                  color: Colors.green,
-                ),
-              ),
-            ),
-            Expanded(
-              child: InkWell(
-                onTap: () {
-                  song.play("notes/note5.wav");
-                },
-                child: Container(
-                  color: Colors.tealAccent,
-                ),
-              ),
-            ),
-            Expanded(
-              child: InkWell(
-                onTap: () {
-                  song.play("notes/note6.wav");
-                },
-                child: Container(
-                  color: Colors.blue,
-                ),
-              ),
-            ),
-            Expanded(
-              child: InkWell(
-                onTap: () {
-                  song.play("notes/note7.wav");
-                },
-                child: Container(
-                  color: Colors.purple,
-                ),
-              ),
-            ),
+          children: const [
+            SongButton(color: Color(0xffEF443A), count: 1),
+            SongButton(color: Color(0xffF99700), count: 2),
+            SongButton(color: Color(0xffFFE93B), count: 3),
+            SongButton(color: Color(0xff4CB050), count: 4),
+            SongButton(color: Color(0xff2E968C), count: 5),
+            SongButton(color: Color(0xff2996F5), count: 6),
+            SongButton(color: Color(0xff9B28B1), count: 7),
           ],
         ),
       ),
